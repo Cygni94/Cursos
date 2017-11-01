@@ -4,11 +4,12 @@ var app = express();
 app.set('view engine', 'ejs')
 
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  res.send('Hello -World!');
 });
 
 app.get('/produtos', function (req, res) {
-    res.render("produtos/lista");
+  console.log("atendendo a requisicao");
+  res.render("produtos/lista");
   });
 
 app.listen(3000, function () {
