@@ -1,40 +1,39 @@
-function procedure() {
+function dayAndTime() {
 
-    let today = new Date();
-    let weekDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-    let result = weekDays[today.getDay()];
+    let newDate = new Date();
+
+    let weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let todayIs = "Today is: " + weekDays[newDate.getDay()] + ".";
+
+    let hour = newDate.getHours();
+    let minutes = newDate.getMinutes();
+    let seconds = newDate.getSeconds();
+
+    let hourAMPM = 0;
+
+    if (hour > 12) {
+        let hourAMPM = hour % 12 + " PM";
+    } else {
+        if (hour < 12) {
+            let hourAMPM = hour + " AM";
+        } else {
+            let hourAMPM = "12 PM"
+        }
+
+    }
+
+    currentTime = "Current time is: " + hourAMPM + ":" + minutes + ":" + seconds;
+
+    result = todayIs + " " + currentTime;
+
     return result;
 }
 
-console.log(procedure());
+console.log(dayAndTime());
 
-let task = document.querySelector('#one');
-task.addEventListener("load", one);
+function currentTime() {
 
-function one() {
-    task.innerHTML = procedure();
 };
 
-/*    console.log('Today is:'(weekDay)'.'<br>'Current time is:'(hour):(minutes):(seconds)); 
-    function result(task) {
-
-    }
-    
-
-       for (let task = 1; task < array.length; task++) {
-        let today = array[task];
-        
-
-
-        let today = 1 + 4;
-        return tasks;
-    };
-    console.log(one);
-
-
-
-for (var index = 0; index < array.length; index++) {
-    var element = array[index];
-    
-}
-*/
+let answerField = document.querySelector('#one > #result');
+answerField.innerHTML = dayAndTime();
