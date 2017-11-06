@@ -1,3 +1,9 @@
+let id = "one";
+let exercise = "1. Write a JavaScript program to display the current day and time in the following format. Sample Output : Today is : Friday. Current time is : 4 PM : 50 : 22";
+
+
+
+
 function dayAndTime() {
 
     let newDate = new Date();
@@ -17,6 +23,26 @@ function dayAndTime() {
 
     return result;
 }
+
+
+function taskData() {
+let task = {
+    id: id,
+    exercise: exercise,
+    code: dayAndTime,
+    result: dayAndTime()
+}
+return task;
+}
+ console.log(taskData());
+
+/*
+function createRow() {
+    let newTr = document.createElement("tr");
+
+    newTr.appendChild(newTd(id))
+}
+*/
 
 let answerField = document.querySelector('#one > #result');
 answerField.innerHTML = dayAndTime();
