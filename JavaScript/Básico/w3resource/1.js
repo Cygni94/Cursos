@@ -34,15 +34,45 @@ let task = {
 }
 return task;
 }
- console.log(taskData());
-
-/*
-function createRow() {
+/* criar função para automatizar a criação de <tr>
+function createRow(task) {
     let newTr = document.createElement("tr");
 
-    newTr.appendChild(newTd(id))
+    newTr.appendChild(newTd(task.id));
+    newTr.appendChild(newTd(task.exercise));
+    newTr.appendChild(newTd(task.code));
+    newTr.appendChild(newTd(task.result));
+
+    return newTr;
+}
+
+function createCell(taskData) {
+    let newTd = document.createElement("td");
+    newTd.textContent = taskData;
+
+    return newTd;
+}
+
+function addRow(task) {
+let newTr = createRow(task);
+let table = document.querySelector('#table');
+table.appendChild(newTr);
 }
 */
+
+function createRow(task) {
+    let newTr = document.createElement("tr");
+    newTr.appendChild(task.id);
+    return newTr;
+}
+
+function addToTable(newTr) {
+    let table = document.querySelector('#table');
+    table.appendChild
+
+return table;    
+}
+
 
 let answerField = document.querySelector('#one > #result');
 answerField.innerHTML = dayAndTime();

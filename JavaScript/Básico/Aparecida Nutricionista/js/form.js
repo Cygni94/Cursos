@@ -58,6 +58,12 @@ function montaTd(dado, classe) {
     return td;
 }
 
+function adicionaPacienteNaTabela(paciente) {
+    var pacienteTr = montaTr(paciente);
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
+}
+
 function validaPaciente(paciente) {
 
     var erros = [];
@@ -98,10 +104,4 @@ function exibeMensagensDeErro(erros) {
         li.textContent = erro;
         ul.appendChild(li);
     });
-}
-
-function adicionaPacienteNaTabela(paciente) {
-    var pacienteTr = montaTr(paciente);
-    var tabela = document.querySelector("#tabela-pacientes");
-    tabela.appendChild(pacienteTr);
 }
