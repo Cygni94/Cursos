@@ -35,3 +35,29 @@ function printWindow() {
     let window = window.print();
     return window;
 }
+
+//exercise 3
+let three = {
+    id: "3",
+    task: "Write a JavaScript program to get the current date. Expected Output : mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy ",
+    code: currentDate.toString(),
+    result: currentDate()
+}
+
+function currentDate() {
+    let rightNow = new Date;
+let dd = rightNow.getDate();
+if (dd.toString().length == 1) {
+    dd = "0"+dd;
+}
+let mm = rightNow.getMonth() + 1;
+if (dd.toString().length == 1) {
+    dd = "0"+dd;
+}
+let yyyy = rightNow.getFullYear();
+
+let today = dd + "/" + mm + "/" + yyyy;
+
+    return today;
+}
+console.log(currentDate());
