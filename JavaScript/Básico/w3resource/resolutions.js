@@ -1,39 +1,33 @@
-function createCell(taskData) {
-    let newTd = document.createElement("td");
-    newTd.textContent = taskData;
-
-    return newTd;
+// exercise 1
+let one = {
+    id: "1",
+    task: "Write a JavaScript program to display the current day and time in the following format. Sample Output : Today is : Friday. Current time is : 4 PM : 50 : 22",
+    code: dayAndTime.toString(),
+    result: dayAndTime()
 }
 
-function createRow(task) {
-    let newTr = document.createElement("tr");
-    
-    newTr.appendChild(newTd(task.id));
-    newTr.appendChild(newTd(task.exercise));
-    newTr.appendChild(newTd(task.code));
-    newTr.appendChild(newTd(task.result));
+function dayAndTime() {
+    let newDate = new Date();
 
-    return newTr;
+    let weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let todayIs = "Today is: " + weekDays[newDate.getDay()] + ".";
+
+    let hour = newDate.getHours();
+    let minutes = newDate.getMinutes();
+    let seconds = newDate.getSeconds();
+
+    hourAMPM = (hour >= 12) ? hour - 12 + ' PM' : hour + ' AM';
+    currentTime = "Current time is: " + hourAMPM + " : " + minutes + " : " + seconds;
+    result = todayIs + " " + currentTime;
+    return result;
 }
-
-function addRow(task) {
-let newTr = createRow(task);
-let table = document.querySelector('#table');
-table.appendChild(newTr);
-}
-/*
-var node = document.createElement("LI");
-var textnode = document.createTextNode("Water");
-node.appendChild(textnode);
-document.getElementById("myList").appendChild(node); */
-
 
 
 // exercise 2
 let two = {
     id: "2",
     task: "Write a JavaScript program to print the contents of the current window.",
-    code: printWindow,
+    code: printWindow.toString(),
     result: window
 }
 
@@ -41,5 +35,3 @@ function printWindow() {
     let window = window.print();
     return window;
 }
-
-onload(createRow(two));
