@@ -73,8 +73,16 @@ function escalenoArea() {
     let a = 5;
     let b = 6;
     let c = 7;
-    let area = (1/2) * a * b * Math.sin(c);
+    let semiperimetro = (a + b + c)/2;
+    let area = Math.sqrt(semiperimetro*(semiperimetro-a)*(semiperimetro-b)*(semiperimetro-c));
 
     return area;
 }
-console.log(escalenoArea());
+
+
+var side1 = 5; 
+var side2 = 6; 
+var side3 = 7; 
+var perimeter = (side1 + side2 + side3)/2;
+var area =  Math.sqrt(perimeter*((perimeter-side1)*(perimeter-side2)*(perimeter-side3)));
+console.log(area);
