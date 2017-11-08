@@ -2,51 +2,70 @@
 <html lang="en">
 
 <head>
-  <title>Exercícios JS w3resource</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Exercícios JS w3resource</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-    crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
 </head>
 
 <body>
-  <div class="jumbotron">
-    <h1 class="display-4">w3resource | Javascript basic exercises</h1>
-    <p class="lead">
-      <a class="btn btn-primary btn-md" href="https://www.w3resource.com/javascript-exercises/javascript-basic-exercises.php#h_one"
-        role="button">See list</a>
-    </p>
-  </div>
-  <div class="container-fluid">
-    <table class="table table-hover">
-      <thead >
-        <tr class="row">
-          <th class="col-1">#</th>
-          <th class="col-3">Task</th>
-          <th class="col-6">Function</th>
-          <th class="col-2">Result</th>
-        </tr>
-      </thead>
-      <tbody id="table"> </tbody>
-    </table>
-  </div>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-    crossorigin="anonymous"></script>
-  <script src="showResolutions.js"></script>
-  <script src="resolutions.js"></script>
-  <script>
-    appendRow(one);
-    appendRow(two);
-    appendRow(three);
-  </script>
+    <header>
+        <div class="jumbotron pb-1">
+            <h1 class="display-4">w3resource | Javascript basic exercises</h1>
+            <p class="lead">
+                <a class="btn btn-primary btn-md" href="https://www.w3resource.com/javascript-exercises/javascript-basic-exercises.php#h_one"
+                    role="button">Go to source</a>
+            </p>
+        </div>
+    </header>
+
+    <main role="main">
+
+        <!-- Wrap the rest of the page in another container to center all the content. -->
+        <div id="list" class="container">
+            <div class="text-center">
+                <h1 class="jumbotron-heading display-4">Lists</h1>
+                <p class="lead text-muted"></p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 text-center">
+                    <h3>Basic</h3>
+                    <p>80 exercises</p>
+                    <p>
+                        <a class="btn btn-secondary" href="lists/basic.html" role="button">View list &raquo;</a>
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="container" style="display:none">
+            <p class="float-right">
+                <a href="#">Back to top</a>
+            </p>
+            <p>
+                <a href="http://ccoelho.me">Cristiano Coelho</a> &middot;
+                <a href="#">GitHub</a>
+            </p>
+        </footer>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>
