@@ -60,4 +60,21 @@ let today = dd + "/" + mm + "/" + yyyy;
 
     return today;
 }
-console.log(currentDate());
+
+//exercise 4
+let four = {
+    id: "4",
+    task: "Write a JavaScript program to find the area of a triangle where lengths of the three of its sides are 5, 6, 7.",
+    code: escalenoArea.toString(),
+    result: escalenoArea()
+}
+
+function escalenoArea() {
+    let a = 5;
+    let b = 6;
+    let c = 7;
+    let area = (1/2) * a * b * Math.sin(c);
+
+    return area;
+}
+console.log(escalenoArea());
