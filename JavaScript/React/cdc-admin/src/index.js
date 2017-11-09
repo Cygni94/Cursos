@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import AutorAdmin from './Autor';
-import LivroAdmin from './Livro';
+import AutorBox from './Autor';
+import LivroBox from './Livro';
 import Home from './Home';
 import './index.css';
 import {BrowserRouter as Router, Route,Switch,Link} from 'react-router-dom';
@@ -12,8 +12,8 @@ ReactDOM.render((
             <App>
                     <Switch>            
                         <Route exact path="/" component={Home}/>
-                        <Route path="/autor" component={AutorAdmin}/>
-                        <Route path="/livro" component={LivroAdmin}/>                
+                        <Route path="/autor" component={AutorBox}/>
+                        <Route path="/livro" component={LivroBox}/>
                     </Switch>            
             </App>
         </Router>
