@@ -78,20 +78,14 @@ function escalenoArea() {
 let five = {
     id: "5",
     task: "Write a JavaScript program to rotate the string 'w3resource' in right direction by periodically removing one letter from the end of the string and attaching it to the front.",
-    result: rotateString('w3resource')
+    result: animateString('w3resource')
 }
 
-function rotateString(String) {
+function animateString(String) {
     let array = String.split('');
     let reversed = array.reverse();
-
-    return reversed;
-}
-
-function animateString(rotateString) {
-    let reversed = rotateString(String);
     for (let i = 0; i < reversed.length; i++) {
-        reversed[i].classList.add(removing);
+        reversed.classList.add(removing);
     }
-    
+    return reversed;
 }
