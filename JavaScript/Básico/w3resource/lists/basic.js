@@ -108,3 +108,17 @@ function bisextoChecker(ano) {
     }
     return ano + ' ' + 'is a' + ' ' + check;
 }
+
+//exercise 7
+let seven = {
+    id: "7",
+    task: "Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050.",
+    result: firstJanSun(2013, 0, 0)
+}
+
+function firstJanSun(sinceYear, month, day) {
+    let since = new Date(sinceYear, month, day);
+    let first = Date.prototype.getDay();    
+    return
+}
+console.log(firstJanSun());
