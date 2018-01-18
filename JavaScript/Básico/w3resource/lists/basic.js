@@ -78,14 +78,33 @@ function escalenoArea() {
 let five = {
     id: "5",
     task: "Write a JavaScript program to rotate the string 'w3resource' in right direction by periodically removing one letter from the end of the string and attaching it to the front.",
-    result: animateString('w3resource')
+    result: "w3resource (desafio incompleto)"
 }
 
 function animateString(String) {
     let array = String.split('');
     let reversed = array.reverse();
     for (let i = 0; i < reversed.length; i++) {
-        reversed.classList.add(removing);
+        setInterval(function () {
+
+        }, 1000);
     }
     return reversed;
+}
+
+//exercise 6
+let six = {
+    id: "6",
+    task: "Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.",
+    result: bisextoChecker(2016)
+}
+
+function bisextoChecker(ano) {
+    let check;
+    if (0 == ano % 4 && 0 != ano % 100 && 0 == ano % 400) {
+        check = 'leap year';
+    } else {
+        check = 'regular year';
+    }
+    return ano + ' ' + 'is a' + ' ' + check;
 }
