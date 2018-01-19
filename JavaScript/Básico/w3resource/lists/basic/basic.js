@@ -124,4 +124,4 @@ function firstJanSun(sinceYear) {
 let since = new Date(sinceYear, 0, 1);
     return since
 }
-console.log(firstJanSun.);
+console.log(firstJanSun);
