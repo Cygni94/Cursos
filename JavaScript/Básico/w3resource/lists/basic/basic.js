@@ -2,6 +2,7 @@
 let one = {
     id: "1",
     task: "Write a JavaScript program to display the current day and time in the following format. Sample Output : Today is : Friday. Current time is : 4 PM : 50 : 22",
+    code: dayAndTime.toString(),
     result: dayAndTime()
 }
 
@@ -25,6 +26,7 @@ function dayAndTime() {
 let two = {
     id: "2",
     task: "Write a JavaScript program to print the contents of the current window.",
+    code: printWindow.toString(),
     result: window
 }
 
@@ -37,6 +39,7 @@ function printWindow() {
 let three = {
     id: "3",
     task: "Write a JavaScript program to get the current date. Expected Output : mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy ",
+    code: currentDate.toString(),
     result: currentDate()
 }
 
@@ -61,6 +64,7 @@ function currentDate() {
 let four = {
     id: "4",
     task: "Write a JavaScript program to find the area of a triangle where lengths of the three of its sides are 5, 6, 7.",
+    code: escalenoArea.toString(),
     result: escalenoArea()
 }
 
@@ -108,3 +112,16 @@ function bisextoChecker(ano) {
     }
     return ano + ' ' + 'is a' + ' ' + check;
 }
+
+//exercise 7
+let seven = {
+    id: "7",
+    task: "Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050.",
+    result: firstJanSun(2013)
+}
+
+function firstJanSun(sinceYear) {
+let since = new Date(sinceYear, 0, 1);
+    return since
+}
+console.log(firstJanSun);
