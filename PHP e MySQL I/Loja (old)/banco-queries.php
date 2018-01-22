@@ -14,4 +14,3 @@ function insereProduto($abrirConexao, $nome, $preco) {
     $resultadodainsercao = mysqli_query($abrirConexao, $query);
     return $resultadodainsercao;
 }
-
