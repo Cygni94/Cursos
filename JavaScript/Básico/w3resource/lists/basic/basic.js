@@ -2,7 +2,7 @@
 let one = {
     id: "1",
     task: "Write a JavaScript program to display the current day and time in the following format. Sample Output : Today is : Friday. Current time is : 4 PM : 50 : 22",
-    code: dayAndTime.toString(),
+    code: '<code>dayAndTime.toString()</code>',
     result: dayAndTime()
 }
 
@@ -121,7 +121,12 @@ let seven = {
 }
 
 function firstJanSun(sinceYear) {
-let since = new Date(sinceYear, 0, 1);
-    return since
+    let since = new Date(sinceYear, 0, 1);
+    let result;
+    for (let i = sinceYear; i <= 2050; i++) {
+        if (since.getDay() === 0) {
+            console.log("2013 começou no domingo");
+        }
+    }
 }
-console.log(firstJanSun);
+// console.log(firstJanSun(2013));
