@@ -9,7 +9,7 @@ const App = () => (
     </div>
     <div className='user-info'>
       <img src='https://avatars0.githubusercontent.com/u/21344357?v=4'/>
-      <h1>
+      <h1 className='username'>
         <a href='https://github.com/Cygni94'>Cristiano Coelho</a>
       </h1>
 
