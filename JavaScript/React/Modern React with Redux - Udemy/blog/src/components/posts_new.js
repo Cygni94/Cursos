@@ -1,48 +1,50 @@
-import React, { Component } from "react";
-import { Field, reduxForm } from "redux-form";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { createPost } from "../actions";
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
+import { createPost } from '../actions/index';
+import { Link } from 'react-router-dom';
 
 class PostsNew extends Component {
-  renderField(field) {
-    const { meta: { touched, error } } = field;
-    const className = `form-group ${touched && error ? "has-danger" : ""}`;
 
+  onSubmit(props) {
+    this.props.createPost(props, () => {
+      // blog post has been created, navigate the user to the index
+      // We navigate by calling this.props.history.push with the
+      // new path to navigate to.
+      this.props.history.push('/')
+    });
+  }
+
+  renderField(field) {
     return (
-      <div className={className}>
+      <div className={`form-group ${field.meta.touched && field.meta.invalid ? 'has-danger' : ''}`}>
         <label>{field.label}</label>
-        <input className="form-control" type="text" {...field.input} />
+        <input
+          {...field.input}
+          type="text" className="form-control"
+         />
         <div className="text-help">
-          {touched ? error : ""}
+          {field.meta.touched ? field.meta.error : ''}
         </div>
       </div>
     );
   }
 
-  onSubmit(values) {
-    this.props.createPost(values, () => {
-      this.props.history.push("/");
-    });
-  }
-
   render() {
     const { handleSubmit } = this.props;
-
     return (
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+        <h3>Create A New Post</h3>
         <Field
-          label="Title For Post"
-          name="title"
-          component={this.renderField}
-        />
+          label="Title" // this is a custom prop
+          name="title" component={this.renderField}
+         />
         <Field
-          label="Categories"
-          name="categories"
-          component={this.renderField}
-        />
+          label="Categories" // this is a custom prop
+          name="categories"  component={this.renderField}
+         />
         <Field
-          label="Post Content"
+          label="Content" // this is a custom prop
           name="content"
           component={this.renderField}
         />
@@ -54,26 +56,26 @@ class PostsNew extends Component {
 }
 
 function validate(values) {
-  // console.log(values) -> { title: 'asdf', categories: 'asdf', content: 'asdf' }
   const errors = {};
 
-  // Validate the inputs from 'values'
   if (!values.title) {
-    errors.title = "Enter a title";
+    errors.title = 'Enter a username';
   }
   if (!values.categories) {
-    errors.categories = "Enter some categories";
+    errors.categories = 'Enter categories';
   }
-  if (!values.content) {
-    errors.content = "Enter some content please";
+  if(!values.content) {
+    errors.content = 'Enter some content';
   }
 
-  // If errors is empty, the form is fine to submit
-  // If errors has *any* properties, redux form assumes form is invalid
   return errors;
 }
 
+// reduxForm: 1st is form config
+// connect: first argument is mapStateToProps, 2nd is mapDispatchToProps
 export default reduxForm({
-  validate,
-  form: "PostsNewForm"
-})(connect(null, { createPost })(PostsNew));
+  form: 'PostsNewForm',
+  validate
+})(
+  connect(null, { createPost })(PostsNew)
+);
