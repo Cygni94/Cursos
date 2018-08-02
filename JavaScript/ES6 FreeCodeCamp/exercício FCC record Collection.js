@@ -24,6 +24,7 @@ var collectionCopy = JSON.parse(JSON.stringify(collection));
 // Only change code below this line
 function updateRecords(id, prop, value) {
     let selectedID = collection[id];
+    selectedID[prop] = value;
     //1 - If prop is "tracks" but the album doesn't have a "tracks" property,
     //create an empty array before adding the new value to the album's corresponding property.
     if (prop == "tracks") {
@@ -36,7 +37,7 @@ function updateRecords(id, prop, value) {
     }
     //3 - If value is empty (""), delete the given prop property from the album.
     if (value == "") {
-        selectedID[prop] = "";
+        delete selectedID[prop];
     }
     return collection;
 }
