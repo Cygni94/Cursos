@@ -27,21 +27,20 @@ function updateRecords(id, prop, value) {
     //1 - If prop is "tracks" but the album doesn't have a "tracks" property,
     //create an empty array before adding the new value to the album's corresponding property.
     if (prop == "tracks") {
-        if (selectedID.hasOwnProperty(selectedID, "tracks")) {
-            selectedID[prop].push();
-        }
-        //2 - If prop is "tracks" and value isn't empty (""),
-        //push the value onto the end of the album's existing tracks array.
-
-        //3 - If value is empty (""), delete the given prop property from the album.
-        if (prop == "album") {
-            if (value == "") {
-                selectedID[prop].delete();
-            }
-        }
-        return collection;
+        selectedID[prop] = [];
     }
+    //2 - If prop is "tracks" and value isn't empty (""),
+    //push the value onto the end of the album's existing tracks array.
+    if (prop == "tracks") {
+        selectedID[prop].push(value);
+    }
+    //3 - If value is empty (""), delete the given prop property from the album.
+    if (value == "") {
+        selectedID[prop] = "";
+    }
+    return collection;
 }
+
 // Alter values below to test your code
 updateRecords(5439, "artist", "ABBA");
 updateRecords(5439, "tracks", "Take a Chance on Me");
